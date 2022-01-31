@@ -6,13 +6,17 @@ public enum ServerVersions
     iI("v1_8_R3", 1, 47), 
     Ii("v1_12_R1", 2, 340);
     
-    int II;
+    int protocolVersion;
     
-    private ServerVersions(final String s, final int n, final int ii) {
-        this.II = ii;
+    private ServerVersions(final String s, final int n, final int protocolVersion) {
+        this.protocolVersion = protocolVersion;
     }
     
     public int II() {
-        return this.II;
+		return getProtocolVersion();
+	}
+
+	public int getProtocolVersion() {
+        return this.protocolVersion;
     }
 }

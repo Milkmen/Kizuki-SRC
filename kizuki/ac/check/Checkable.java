@@ -12,7 +12,7 @@ public class Checkable
     public static volatile Thread thread;
     public static String II;
     public static ik II;
-    public static Class1 II;
+    public static ServerInfo serverInfo;
     public static ij II;
     public static Plugin plugin;
     public static ti II;

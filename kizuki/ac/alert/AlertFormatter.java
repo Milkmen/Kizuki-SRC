@@ -24,7 +24,7 @@ public final class AlertFormatter
     public static String II(String s, final PlayerData playerData, final KizukiCheck kizukiCheck, final String s2, final float n) {
         s = ii(s);
         s = s.replace("%player%", Objects.requireNonNull(playerData.getPlayer().getName()));
-        s = s.replace("%check%", kizukiCheck.II());
+        s = s.replace("%check%", kizukiCheck.getChatName());
         if (s.contains("%bar%")) {
             s = s.replace("%bar%", II(kizukiCheck.getBanVl(), kizukiCheck.II().getValue()));
         }
@@ -72,7 +72,7 @@ public final class AlertFormatter
     public static String iI(String s) {
         s = ii(s);
         s = s.replace("%server-version%", BukkitEventListener2.II().toString());
-        s = s.replace("%protocol-version%", BukkitEventListener2.II().II() + "");
+        s = s.replace("%protocol-version%", BukkitEventListener2.II().getProtocolVersion() + "");
         s = s.replace("%viaversion%", VersionUtil.VIAVERSION_ENABLED + "");
         s = s.replace("%players%", Bukkit.getOnlinePlayers().size() + "");
         s = s.replace("%maxplayers%", Bukkit.getMaxPlayers() + "");

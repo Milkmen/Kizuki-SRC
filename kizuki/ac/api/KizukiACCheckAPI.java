@@ -16,11 +16,11 @@ public class KizukiACCheckAPI
     }
     
     public LimitedDouble getVL() {
-        return this.check.II();
+        return this.check.getVL();
     }
     
     public String getChatName() {
-        return this.check.II();
+        return this.check.getChatName();
     }
     
     public String getConfigLocation() {

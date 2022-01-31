@@ -49,7 +49,7 @@ public class Main extends JavaPlugin
         new ih();
         this.logger.warning("EntityTraceBacker started!");
         try {
-            Checkable.II = new Class1(this);
+            Checkable.serverInfo = new ServerInfo(this);
         }
         catch (IOException ex) {
             ex.printStackTrace();

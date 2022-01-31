@@ -3,6 +3,9 @@ package kizuki.ac.utils;
 import org.bukkit.entity.*;
 import us.myles.ViaVersion.api.*;
 import com.comphenix.protocol.*;
+
+import kizuki.ac.version;
+
 import org.bukkit.*;
 
 public class VersionUtil

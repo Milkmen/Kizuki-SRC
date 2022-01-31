@@ -14,7 +14,7 @@ public class CPacketBlockPlace extends Packet
     
     public CPacketBlockPlace(final PacketEvent packetEvent) {
         super(packetEvent);
-        if (BukkitEventListener2.II().II() == ServerVersions.iI.II()) {
+        if (BukkitEventListener2.II().getProtocolVersion() == ServerVersions.iI.getProtocolVersion()) {
             this.blockPosition = this.getBlockPosition();
         }
         else {

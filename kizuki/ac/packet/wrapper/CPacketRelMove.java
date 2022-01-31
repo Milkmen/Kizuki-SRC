@@ -27,7 +27,7 @@ public class CPacketRelMove extends Packet
         this.II = packetEvent.getPacketType();
         this.II = BlockUtils.getEntityById(packetEvent.getPlayer().getWorld(), (int)packetEvent.getPacket().getIntegers().read(0));
         if (packetEvent.getPacketType().equals((Object)PacketType$Play$Server.REL_ENTITY_MOVE_LOOK) || packetEvent.getPacketType().equals((Object)PacketType$Play$Server.REL_ENTITY_MOVE)) {
-            if (BukkitEventListener2.II().II() == 47) {
+            if (BukkitEventListener2.II().getProtocolVersion() == 47) {
                 this.II = (byte)this.II().getBytes().read(0) / 32.0;
                 this.iI = (byte)this.II().getBytes().read(1) / 32.0;
                 this.Ii = (byte)this.II().getBytes().read(2) / 32.0;

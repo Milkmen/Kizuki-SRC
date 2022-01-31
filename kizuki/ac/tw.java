@@ -116,7 +116,7 @@ public final class tw
             if (potionEffect.getType().equals((Object)PotionEffectType.FAST_DIGGING)) {
                 ii *= 1.0f + (potionEffect.getAmplifier() + 1) * 0.2f;
             }
-            if (BukkitEventListener2.II().II() >= 47) {
+            if (BukkitEventListener2.II().getProtocolVersion() >= 47) {
                 if (!potionEffect.getType().equals((Object)PotionEffectType.SLOW_DIGGING)) {
                     continue;
                 }
