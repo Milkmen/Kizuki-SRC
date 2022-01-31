@@ -75,7 +75,7 @@ public final class BukkitEventListener2 implements Listener
         if (playerData.iI) {
             playerData.II = playerData.II + kizukiACCheckAPI.getChatName() + " " + s;
         }
-        final KizukiCheck checkByName = playerData.getCheckByName(kizukiACCheckAPI.getChatName());
+        final KizukiCheck checkByName = playerData.getCheckByChatName(kizukiACCheckAPI.getChatName());
         checkByName.II().addValue(n);
         final TextComponent ii = AlertFormatter.II(playerData, checkByName, s, n);
         for (final Player player : Bukkit.getOnlinePlayers()) {

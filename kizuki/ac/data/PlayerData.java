@@ -557,18 +557,18 @@ public class PlayerData
         return null;
     }
     
-    public KizukiCheck getCheckByName(final String s) {
+    public KizukiCheck getCheckByChatName(final String s) {
         for (final KizukiCheck kizukiCheck : this.checks) {
-            if (kizukiCheck.II().equalsIgnoreCase(s)) {
+            if (kizukiCheck.getChatName().equalsIgnoreCase(s)) {
                 return kizukiCheck;
             }
         }
         return null;
     }
     
-    public KizukiCheck iI(final String s) {
+    public KizukiCheck getCheckByName(final String s) {
         for (final KizukiCheck kizukiCheck : this.checks) {
-            if (kizukiCheck.iI().equalsIgnoreCase(s)) {
+            if (kizukiCheck.getCheckName().equalsIgnoreCase(s)) {
                 return kizukiCheck;
             }
         }
@@ -576,7 +576,7 @@ public class PlayerData
     }
     
     public double getJumpMotion() {
-        return 0.41999998688697815 + (this.getPlayer().hasPotionEffect(PotionEffectType.JUMP) ? (this.getPotionLevel("JUMP") * 0.1f) : 0.0);
+        return 0.42 + (this.getPlayer().hasPotionEffect(PotionEffectType.JUMP) ? (this.getPotionLevel("JUMP") * 0.1f) : 0.0);
     }
     
     public boolean isGlidingOrLevitating(final CPacketFlying cPacketFlying) {

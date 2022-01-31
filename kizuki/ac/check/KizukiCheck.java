@@ -24,17 +24,17 @@ public abstract class KizukiCheck extends Checkable
     private final CheckType checkType;
     private final String chatName;
     @Deprecated
-    private final String Ii;
+    private final String checkName;
     private final DevelopmentState devState;
     private final boolean iI;
     public boolean thread;
     private LimitedDouble vl;
     
-    public KizukiCheck(final PlayerData data, final CheckType checkType, final String chatName, final String ii2, final DevelopmentState devState, final boolean ii3) {
+    public KizukiCheck(final PlayerData data, final CheckType checkType, final String chatName, final String checkName, final DevelopmentState devState, final boolean ii3) {
         this.data = data;
         this.checkType = checkType;
         this.chatName = chatName;
-        this.Ii = ii2;
+        this.checkName = checkName;
         this.devState = devState;
         this.iI = ii3;
         this.thread = new ConcurrentHashMap();
@@ -96,8 +96,8 @@ public abstract class KizukiCheck extends Checkable
         return this.chatName;
     }
     
-    public String iI() {
-        return this.Ii;
+    public String getCheckName() {
+        return this.checkName;
     }
     
     public DevelopmentState getState() {
@@ -131,7 +131,7 @@ public abstract class KizukiCheck extends Checkable
     }
     
     public String Ii() {
-        return this.checkType.getConfigLocation() + "." + this.Ii;
+        return this.checkType.getConfigLocation() + "." + this.checkName;
     }
     
     public String ii() {
