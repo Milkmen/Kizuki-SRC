@@ -1,6 +1,6 @@
-# Kizuki-SRC
-This is a remapped source of Kizuki Anti-Cheat by Retard.
+# Kizuki Anti-Cheat Source
+This is a (poorly) remapped source of Kizuki Anti-Cheat by Koloslolya.
 
-Only important parts are remapped as we have a life.
+I'm gonna try to improve this as long as I'm motivated.
 
-I know you can see my name on commits im not dumb
+If you are a copyright holder and want me to take this down, feel free to contact me on discord (my discord name and tag are on my profile)
