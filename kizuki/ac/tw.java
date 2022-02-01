@@ -14,15 +14,15 @@ import java.util.regex.*;
 
 public final class tw
 {
-    private static final Pattern II;
-    public static final String II;
+    private static final Pattern COMPILE;
+    public static final String version;
     static final /* synthetic */ boolean II;
     
     private tw() {
     }
     
-    public static Class II(final String s) {
-        final String string = "net.minecraft.server." + tw.II + s;
+    public static Class<?> getNMSClass(String nmsClassString) {
+        final String string = "net.minecraft.server." + tw.II + nmsClassString;
         try {
             return Class.forName(string);
         }
@@ -32,37 +32,7 @@ public final class tw
         }
     }
     
-    public static float II(final int n) {
-        try {
-            final Class ii = II("Block");
-            if (!tw.II && ii == null) {
-                throw new AssertionError();
-            }
-            final Object invoke = ii.getMethod("getById", Integer.TYPE).invoke(ii, n);
-            return invoke.getClass().getField("frictionFactor").getFloat(invoke);
-        }
-        catch (Exception ex) {
-            ex.printStackTrace();
-            return -1.0f;
-        }
-    }
-    
-    public static float iI(final int n) {
-        try {
-            final Class ii = II("Block");
-            if (!tw.II && ii == null) {
-                throw new AssertionError();
-            }
-            final Object invoke = ii.getMethod("getById", Integer.TYPE).invoke(ii, n);
-            return invoke.getClass().getField("frictionFactor").getFloat(invoke);
-        }
-        catch (Exception ex) {
-            ex.printStackTrace();
-            return -1.0f;
-        }
-    }
-    
-    public static float Ii(final int n) {
+    public static float getFrictionFactor(final int n) {
         try {
             final Class ii = II("Block");
             if (!tw.II && ii == null) {
@@ -313,7 +283,7 @@ public final class tw
     
     static {
         II = !tw.class.desiredAssertionStatus();
-        II = Pattern.compile(".", 16);
-        II = tw.II.matcher(Bukkit.getServer().getClass().getPackage().getName()).replaceAll(Matcher.quoteReplacement(",")).split(",")[3] + ".";
+        COMPILE = Pattern.compile(".", Pattern.LITERAL);
+        version = COMPILE.matcher(Bukkit.getServer().getClass().getPackage().getName()).replaceAll(Matcher.quoteReplacement(",")).split(",")[3] + ".";
     }
 }
