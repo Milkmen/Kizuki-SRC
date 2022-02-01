@@ -1,9 +1,10 @@
 package kizuki.ac;
 
-import kizuki.ac.check.*;
 import kizuki.ac.packet.*;
 import com.comphenix.protocol.events.*;
 import kizuki.ac.event.*;
+import kizuki.ac.features.checks.*;
+
 import com.comphenix.protocol.*;
 import com.google.common.collect.*;
 import java.lang.reflect.*;

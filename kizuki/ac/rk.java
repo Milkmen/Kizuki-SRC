@@ -1,15 +1,16 @@
 package kizuki.ac;
 
-import kizuki.ac.check.enums.*;
 import org.bukkit.*;
 import org.bukkit.inventory.*;
 import kizuki.ac.alert.*;
 import kizuki.ac.utils.gui.*;
 import java.util.concurrent.*;
-import kizuki.ac.check.*;
+
 import org.bukkit.inventory.meta.*;
 import java.util.*;
 import kizuki.ac.api.*;
+import kizuki.ac.features.checks.*;
+import kizuki.ac.features.checks.enums.*;
 
 public class rk
 {

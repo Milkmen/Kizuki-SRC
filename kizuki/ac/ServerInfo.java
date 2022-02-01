@@ -3,8 +3,10 @@ package kizuki.ac;
 import org.bukkit.plugin.*;
 import java.util.concurrent.*;
 import kizuki.ac.bstats.*;
+import kizuki.ac.features.checks.*;
+
 import org.bukkit.*;
-import kizuki.ac.check.*;
+
 import kizuki.ac.api.*;
 
 public class ServerInfo

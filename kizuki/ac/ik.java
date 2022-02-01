@@ -1,7 +1,8 @@
 package kizuki.ac;
 
 import org.bukkit.*;
-import kizuki.ac.check.*;
+
+import kizuki.ac.features.checks.*;
 
 public class ik
 {

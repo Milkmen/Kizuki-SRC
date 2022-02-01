@@ -1,9 +1,11 @@
 package kizuki.ac;
 
 import org.bukkit.entity.*;
-import kizuki.ac.check.*;
-import kizuki.ac.check.enums.*;
+
 import kizuki.ac.event.*;
+import kizuki.ac.features.checks.*;
+import kizuki.ac.features.checks.enums.*;
+
 import java.util.*;
 import kizuki.ac.alert.*;
 import kizuki.ac.utils.gui.*;

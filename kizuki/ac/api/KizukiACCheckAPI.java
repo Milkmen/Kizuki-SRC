@@ -1,7 +1,8 @@
 package kizuki.ac.api;
 
-import kizuki.ac.check.*;
 import org.bukkit.entity.*;
+
+import kizuki.ac.features.checks.*;
 
 public class KizukiACCheckAPI
 {

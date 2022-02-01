@@ -1,8 +1,9 @@
 package kizuki.ac;
 
 import java.util.*;
-import kizuki.ac.check.*;
+
 import kizuki.ac.alert.*;
+import kizuki.ac.features.checks.*;
 
 public class tu
 {

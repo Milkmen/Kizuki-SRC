@@ -1,8 +1,10 @@
 package kizuki.ac.utils;
 
 import org.bukkit.scheduler.*;
+
+import kizuki.ac.features.checks.*;
+
 import org.bukkit.*;
-import kizuki.ac.check.*;
 
 public final class TaskUtils
 {

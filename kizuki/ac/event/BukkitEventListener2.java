@@ -7,10 +7,12 @@ import com.comphenix.protocol.*;
 import kizuki.ac.utils.*;
 import kizuki.ac.alert.*;
 import kizuki.ac.data.*;
+import kizuki.ac.features.checks.*;
+
 import java.util.function.*;
 import java.util.stream.*;
 import org.bukkit.command.*;
-import kizuki.ac.check.*;
+
 import net.md_5.bungee.api.chat.*;
 import org.bukkit.*;
 import kizuki.ac.*;

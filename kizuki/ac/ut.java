@@ -6,15 +6,15 @@ import com.comphenix.protocol.events.*;
 
 public class ut extends Packet
 {
-    ItemStack II;
+    ItemStack itemStack;
     
     public ut(final PacketEvent packetEvent) {
         super(packetEvent);
-        this.II = (ItemStack)packetEvent.getPacket().getItemModifier().read(0);
+        this.itemStack = (ItemStack) packetEvent.getPacket().getItemModifier().read(0);
     }
     
-    public ItemStack II() {
-        return this.II;
+    public ItemStack getItemStack() {
+        return this.itemStack;
     }
     
     public short getId() {

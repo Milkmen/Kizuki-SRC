@@ -3,11 +3,12 @@ package kizuki.ac.utils;
 import org.bukkit.block.*;
 import org.jetbrains.annotations.*;
 import kizuki.ac.data.*;
+import kizuki.ac.features.checks.*;
+
 import org.bukkit.*;
 import org.bukkit.util.*;
 import org.bukkit.entity.*;
 import java.util.*;
-import kizuki.ac.check.*;
 
 public final class BlockUtils
 {

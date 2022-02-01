@@ -3,10 +3,12 @@ package kizuki.ac;
 import org.bukkit.plugin.java.*;
 import java.util.logging.*;
 import kizuki.ac.packet.*;
-import kizuki.ac.check.*;
+
 import org.bukkit.event.*;
 import kizuki.ac.event.*;
-import kizuki.ac.command.*;
+import kizuki.ac.features.checks.*;
+import kizuki.ac.features.commands.*;
+
 import org.bukkit.command.*;
 import java.io.*;
 import org.bukkit.plugin.*;

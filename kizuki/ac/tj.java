@@ -4,8 +4,9 @@ import org.bukkit.plugin.*;
 import com.comphenix.protocol.*;
 import com.comphenix.protocol.events.*;
 import org.bukkit.*;
-import kizuki.ac.check.*;
+
 import kizuki.ac.packet.wrapper.*;
+import kizuki.ac.features.checks.*;
 import kizuki.ac.packet.*;
 
 class tj extends PacketAdapter

@@ -4,9 +4,9 @@ import kizuki.ac.data.*;
 import net.md_5.bungee.api.chat.*;
 import java.util.*;
 import kizuki.ac.event.*;
+import kizuki.ac.features.checks.*;
 import kizuki.ac.utils.*;
 import kizuki.ac.*;
-import kizuki.ac.check.*;
 import kizuki.ac.api.*;
 import org.bukkit.*;
 

@@ -1,7 +1,8 @@
 package kizuki.ac;
 
-import kizuki.ac.check.enums.*;
 import org.bukkit.entity.*;
+
+import kizuki.ac.features.checks.enums.*;
 import kizuki.ac.utils.gui.*;
 
 final class rc extends ChestButton

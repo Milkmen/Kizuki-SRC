@@ -1,6 +1,6 @@
 package kizuki.ac;
 
-import kizuki.ac.check.enums.*;
+import kizuki.ac.features.checks.enums.*;
 
 public class rn
 {

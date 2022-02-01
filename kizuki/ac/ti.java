@@ -1,8 +1,10 @@
 package kizuki.ac;
 
 import org.bukkit.*;
-import kizuki.ac.check.*;
 import org.bukkit.configuration.file.*;
+
+import kizuki.ac.features.checks.*;
+
 import java.io.*;
 
 public class ti

@@ -1,8 +1,9 @@
 package kizuki.ac.api;
 
-import kizuki.ac.check.*;
 import org.bukkit.entity.*;
 import kizuki.ac.event.*;
+import kizuki.ac.features.checks.*;
+
 import org.bukkit.*;
 import org.bukkit.event.*;
 import kizuki.ac.utils.*;

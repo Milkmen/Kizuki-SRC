@@ -2,7 +2,8 @@ package kizuki.ac.packet;
 
 import java.util.concurrent.*;
 import kizuki.ac.event.*;
-import kizuki.ac.check.*;
+import kizuki.ac.features.checks.*;
+
 import com.comphenix.protocol.events.*;
 import kizuki.ac.utils.*;
 import kizuki.ac.*;
