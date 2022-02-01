@@ -82,7 +82,7 @@ public class HitboxAB extends KizukiCheck
                         break;
                     }
                     ++n2;
-                    final uv ii2 = tw.II(this.verbosePattern);
+                    final uv ii2 = ReflectionUtils.II(this.verbosePattern);
                     if (ii2 == null) {
                         return;
                     }

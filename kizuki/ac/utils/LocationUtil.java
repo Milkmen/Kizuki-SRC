@@ -20,13 +20,13 @@ public class LocationUtil implements Cloneable
     private float yaw;
     
     public LocationUtil(final World world, final double x, final double y, final double z, final float yaw, final float pitch) {
-        this.clazz = tw.II("AxisAlignedBB");
+        this.clazz = ReflectionUtils.II("AxisAlignedBB");
         try {
             if (BukkitEventListener2.II().equals(ServerVersions.iI)) {
-                this.getCubesA = Objects.requireNonNull(tw.II("World")).getMethod("a", this.clazz);
+                this.getCubesA = Objects.requireNonNull(ReflectionUtils.II("World")).getMethod("a", this.clazz);
             }
             else {
-                this.getCubes = Objects.requireNonNull(tw.II("World")).getMethod("getCubes", tw.II("Entity"), this.clazz);
+                this.getCubes = Objects.requireNonNull(ReflectionUtils.II("World")).getMethod("getCubes", ReflectionUtils.II("Entity"), this.clazz);
             }
         }
         catch (NoSuchMethodException ex) {
@@ -41,7 +41,7 @@ public class LocationUtil implements Cloneable
     }
     
     public LocationUtil(final World world, final double x, final double y, final double z) {
-        this.clazz = tw.II("AxisAlignedBB");
+        this.clazz = ReflectionUtils.II("AxisAlignedBB");
         this.world = world;
         this.x = x;
         this.y = y;
@@ -51,7 +51,7 @@ public class LocationUtil implements Cloneable
     }
     
     public LocationUtil(final Location location) {
-        this.clazz = tw.II("AxisAlignedBB");
+        this.clazz = ReflectionUtils.II("AxisAlignedBB");
         this.world = location.getWorld();
         this.x = location.getX();
         this.y = location.getY();
@@ -120,7 +120,7 @@ public class LocationUtil implements Cloneable
         try {
             final Object invoke = this.world.getClass().getMethod("getHandle", (Class<?>[])new Class[0]).invoke(this.world, new Object[0]);
             final Object instance = this.clazz.getConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE).newInstance(this.getX() - 0.4, this.getY(), this.getZ() - 0.4, this.getX() + 0.4, this.getY() + 2.3, this.getZ() + 0.4);
-            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)tw.II(this.getCubesA, invoke, instance)).size() != 0) : (((Collection)tw.II(this.getCubes, invoke, null, instance)).size() != 0);
+            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)ReflectionUtils.II(this.getCubesA, invoke, instance)).size() != 0) : (((Collection)ReflectionUtils.II(this.getCubes, invoke, null, instance)).size() != 0);
         }
         catch (Exception ex) {
             return true;
@@ -131,7 +131,7 @@ public class LocationUtil implements Cloneable
         try {
             final Object invoke = this.world.getClass().getMethod("getHandle", (Class<?>[])new Class[0]).invoke(this.world, new Object[0]);
             final Object instance = this.clazz.getConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE).newInstance(this.getX() - 0.3 - n, this.getY(), this.getZ() - 0.3 - n, this.getX() + 0.3 + n, this.getY() + 1.8, this.getZ() + 0.3 + n);
-            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)tw.II(this.getCubesA, invoke, instance)).size() > 0) : (((Collection)tw.II(this.getCubes, invoke, null, instance)).size() > 0);
+            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)ReflectionUtils.II(this.getCubesA, invoke, instance)).size() > 0) : (((Collection)ReflectionUtils.II(this.getCubes, invoke, null, instance)).size() > 0);
         }
         catch (Exception ex) {
             return true;
@@ -142,7 +142,7 @@ public class LocationUtil implements Cloneable
         try {
             final Object invoke = this.world.getClass().getMethod("getHandle", (Class<?>[])new Class[0]).invoke(this.world, new Object[0]);
             final Object instance = this.clazz.getConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE).newInstance(this.getX() - 0.3, this.getY() + 0.1, this.getZ() - 0.3, this.getX() + 0.3, this.getY() + 1.5, this.getZ() + 0.3);
-            final Collection collection = (Collection)(BukkitEventListener2.II().equals(ServerVersions.iI) ? tw.II(this.getCubesA, invoke, instance) : ((Collection)tw.II(this.getCubes, invoke, null, instance)));
+            final Collection collection = (Collection)(BukkitEventListener2.II().equals(ServerVersions.iI) ? ReflectionUtils.II(this.getCubesA, invoke, instance) : ((Collection)ReflectionUtils.II(this.getCubes, invoke, null, instance)));
             return collection != null && collection.size() != 0;
         }
         catch (Exception ex) {
@@ -154,7 +154,7 @@ public class LocationUtil implements Cloneable
         try {
             final Object invoke = this.world.getClass().getMethod("getHandle", (Class<?>[])new Class[0]).invoke(this.world, new Object[0]);
             final Object instance = this.clazz.getConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE).newInstance(this.getX() - 0.3, this.getY() + 0.1, this.getZ() - 0.3, this.getX() + 0.3, this.getY() + 1.5, this.getZ() + 0.3);
-            return (Collection)(BukkitEventListener2.II().equals(ServerVersions.iI) ? tw.II(this.getCubesA, invoke, instance) : ((Collection)tw.II(this.getCubes, invoke, null, instance)));
+            return (Collection)(BukkitEventListener2.II().equals(ServerVersions.iI) ? ReflectionUtils.II(this.getCubesA, invoke, instance) : ((Collection)ReflectionUtils.II(this.getCubes, invoke, null, instance)));
         }
         catch (Exception ex) {
             return null;
@@ -165,7 +165,7 @@ public class LocationUtil implements Cloneable
         try {
             final Object invoke = this.world.getClass().getMethod("getHandle", (Class<?>[])new Class[0]).invoke(this.world, new Object[0]);
             final Object instance = this.clazz.getConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE).newInstance(this.getX() - 0.4, this.getY() + 2.0, this.getZ() - 0.4, this.getX() + 0.4, this.getY() - 0.4, this.getZ() + 0.4);
-            final String concatanateStrings = CollectionUtils.concatanateStrings(BukkitEventListener2.II().equals(ServerVersions.iI) ? ((Collection)tw.II(this.getCubesA, invoke, instance)) : ((Collection)tw.II(this.getCubes, invoke, null, instance)));
+            final String concatanateStrings = CollectionUtils.concatanateStrings(BukkitEventListener2.II().equals(ServerVersions.iI) ? ((Collection)ReflectionUtils.II(this.getCubesA, invoke, instance)) : ((Collection)ReflectionUtils.II(this.getCubes, invoke, null, instance)));
             return concatanateStrings != null && concatanateStrings.toLowerCase().contains("web");
         }
         catch (Exception ex) {
@@ -181,7 +181,7 @@ public class LocationUtil implements Cloneable
         try {
             final Object invoke = this.world.getClass().getMethod("getHandle", (Class<?>[])new Class[0]).invoke(this.world, new Object[0]);
             final Object instance = this.clazz.getConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE).newInstance(this.getX() - 0.3, this.getY() - 0.75001, this.getZ() - 0.3, this.getX() + 0.3, this.getY() + 0.2, this.getZ() + 0.3);
-            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)tw.II(this.getCubesA, invoke, instance)).size() > 0) : (((Collection)tw.II(this.getCubes, invoke, null, instance)).size() > 0);
+            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)ReflectionUtils.II(this.getCubesA, invoke, instance)).size() > 0) : (((Collection)ReflectionUtils.II(this.getCubes, invoke, null, instance)).size() > 0);
         }
         catch (Exception ex) {
             return true;
@@ -192,7 +192,7 @@ public class LocationUtil implements Cloneable
         try {
             final Object invoke = this.world.getClass().getMethod("getHandle", (Class<?>[])new Class[0]).invoke(this.world, new Object[0]);
             final Object instance = this.clazz.getConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE).newInstance(this.getX() - 0.3, this.getY() - 0.5001, this.getZ() - 0.3, this.getX() + 0.3, this.getY(), this.getZ() + 0.3);
-            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)tw.II(this.getCubesA, invoke, instance)).size() > 0) : (((Collection)tw.II(this.getCubes, invoke, null, instance)).size() > 0);
+            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)ReflectionUtils.II(this.getCubesA, invoke, instance)).size() > 0) : (((Collection)ReflectionUtils.II(this.getCubes, invoke, null, instance)).size() > 0);
         }
         catch (Exception ex) {
             return true;
@@ -203,7 +203,7 @@ public class LocationUtil implements Cloneable
         try {
             final Object invoke = this.world.getClass().getMethod("getHandle", (Class<?>[])new Class[0]).invoke(this.world, new Object[0]);
             final Object instance = this.clazz.getConstructor(Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE, Double.TYPE).newInstance(this.getX() - 0.3, this.getY(), this.getZ() - 0.3, this.getX() + 0.3, this.getY() + 2.5001, this.getZ() + 0.3);
-            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)tw.II(this.getCubesA, invoke, instance)).size() > 0) : (((Collection)tw.II(this.getCubes, invoke, null, instance)).size() > 0);
+            return BukkitEventListener2.II().equals(ServerVersions.iI) ? (((Collection)ReflectionUtils.II(this.getCubesA, invoke, instance)).size() > 0) : (((Collection)ReflectionUtils.II(this.getCubes, invoke, null, instance)).size() > 0);
         }
         catch (Exception ex) {
             return true;

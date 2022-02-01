@@ -159,7 +159,7 @@ public class CPacketFlying extends Packet
                         if (n > n2 + 4) {
                             break;
                         }
-                        if (new Box(Objects.requireNonNull(tw.II(entity)), vector, 0.1).II(new Box(new uv(-0.3, 0.0, -0.3, 0.3, 1.8, 0.3), this.to.toLocation().toVector(), 0.1))) {
+                        if (new Box(Objects.requireNonNull(ReflectionUtils.II(entity)), vector, 0.1).II(new Box(new uv(-0.3, 0.0, -0.3, 0.3, 1.8, 0.3), this.to.toLocation().toVector(), 0.1))) {
                             return true;
                         }
                     }
@@ -189,7 +189,7 @@ public class CPacketFlying extends Packet
                             if (n > n2 + 4) {
                                 break;
                             }
-                            final uv ii2 = tw.II(entity);
+                            final uv ii2 = ReflectionUtils.II(entity);
                             if (ii2 == null || vector == null) {
                                 return true;
                             }

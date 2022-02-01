@@ -138,7 +138,7 @@ public final class MathUtil
     
     public static float sin(final float n) {
         try {
-            final Class ii = tw.II("MathHelper");
+            final Class<?> ii = ReflectionUtils.getNMSClass("MathHelper");
             if (!MathUtil.II && ii == null) {
                 throw new AssertionError();
             }
@@ -152,7 +152,7 @@ public final class MathUtil
     
     public static float cos(final float n) {
         try {
-            final Class ii = tw.II("MathHelper");
+            final Class<?> ii = ReflectionUtils.getNMSClass("MathHelper");
             if (!MathUtil.II && ii == null) {
                 throw new AssertionError();
             }

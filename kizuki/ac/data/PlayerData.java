@@ -226,7 +226,7 @@ public class PlayerData
         if (ground) {
             final Block block = BlockUtils.getBlock(new Location(this.getPlayer().getWorld(), cPacketFlying.getFrom().getX(), cPacketFlying.getFrom().getY() - 1.0, cPacketFlying.getFrom().getZ()));
             if (block != null) {
-                n *= tw.II(block.getType().getId());
+                n *= ReflectionUtils.II(block.getType().getId());
             }
         }
         return n;

@@ -12,17 +12,17 @@ import org.bukkit.util.*;
 import org.bukkit.*;
 import java.util.regex.*;
 
-public final class tw
+public final class ReflectionUtils
 {
     private static final Pattern COMPILE;
     public static final String version;
     static final /* synthetic */ boolean II;
     
-    private tw() {
+    private ReflectionUtils() {
     }
     
     public static Class<?> getNMSClass(String nmsClassString) {
-        final String string = "net.minecraft.server." + tw.II + nmsClassString;
+        final String string = "net.minecraft.server." + ReflectionUtils.II + nmsClassString;
         try {
             return Class.forName(string);
         }
@@ -34,8 +34,8 @@ public final class tw
     
     public static float getFrictionFactor(final int n) {
         try {
-            final Class ii = II("Block");
-            if (!tw.II && ii == null) {
+            final Class<?> ii = getNMSClass("Block");
+            if (!ReflectionUtils.II && ii == null) {
                 throw new AssertionError();
             }
             final Object invoke = ii.getMethod("getById", Integer.TYPE).invoke(ii, n);
@@ -68,8 +68,8 @@ public final class tw
         return booleanValue || II(block, player);
     }
     
-    private static float II(final Block block, final boolean b, final Player player) {
-        float ii = II(block, player);
+    private static float II(Block block, boolean b, Player player) {
+        float ii = test_II(block, player);
         if (ii > 1.0f && iI(player) != null) {
             final int enchantmentLevel = player.getItemInHand().getEnchantmentLevel(Enchantment.DIG_SPEED);
             if (enchantmentLevel > 0) {
@@ -134,7 +134,7 @@ public final class tw
     public static Object iI(final Player player) {
         try {
             final Object ii = II(player);
-            if (!tw.II && ii == null) {
+            if (!ReflectionUtils.II && ii == null) {
                 throw new AssertionError();
             }
             return ii.getClass().getMethod("getHeldItem", (Class<?>[])new Class[0]).invoke(ii, new Object[0]);
@@ -147,8 +147,8 @@ public final class tw
     
     public static Object II(final int n) {
         try {
-            final Class ii = II("Block");
-            if (!tw.II && ii == null) {
+            final Class<?> ii = getNMSClass("Block");
+            if (!ReflectionUtils.II && ii == null) {
                 throw new AssertionError();
             }
             return ii.getClass().getMethod("getById", Integer.TYPE).invoke(ii.getClass(), n);
@@ -159,14 +159,14 @@ public final class tw
         }
     }
     
-    public static boolean II(final Block block, final Player player) {
+    public static boolean II(Block block, Player player) {
         try {
             final Object ii = iI(player);
             if (ii == null) {
                 return false;
             }
-            final Class ii2 = II("Block");
-            if (!tw.II && ii2 == null) {
+            final Class<?> ii2 = getNMSClass("Block");
+            if (!ReflectionUtils.II && ii2 == null) {
                 throw new AssertionError();
             }
             return (boolean)ii.getClass().getMethod("b", ii2.getClass()).invoke(ii, Objects.requireNonNull(II(block.getType().getId())).getClass());
@@ -177,19 +177,19 @@ public final class tw
         }
     }
     
-    public static float II(final Block block, final Player player) {
+    public static float test_II(Block block, Player player) {
         try {
             final Object ii = iI(player);
             if (ii == null) {
                 return 1.0f;
             }
-            final Class ii2 = II("Block");
-            if (!tw.II && ii2 == null) {
+            final Class<?> ii2 = getNMSClass("Block");
+            if (!ReflectionUtils.II && ii2 == null) {
                 throw new AssertionError();
             }
             final Method method = ii.getClass().getMethod("a", ii2.getClass());
-            final Class ii3 = II("Block");
-            return (float)method.invoke(ii, ii3.getMethod("getById", Integer.TYPE).invoke(ii3, block.getType().getId()));
+            final Class<?> ii3 = getNMSClass("Block");
+            return (float) method.invoke(ii, ii3.getMethod("getById", Integer.TYPE).invoke(ii3, block.getType().getId()));
         }
         catch (Exception ex) {
             ex.printStackTrace();
@@ -197,7 +197,7 @@ public final class tw
         }
     }
     
-    public static Field II(final Class clazz, final String s) {
+    public static Field II(final Class<?> clazz, final String s) {
         try {
             final Field field = clazz.getField(s);
             field.setAccessible(true);
@@ -230,7 +230,7 @@ public final class tw
         }
     }
     
-    public static Method II(final Class clazz, final String s, final Class... array) {
+    public static Method II(final Class<?> clazz, final String s, final Class... array) {
         try {
             final Method method = clazz.getMethod(s, (Class[])array);
             method.setAccessible(true);
@@ -282,7 +282,7 @@ public final class tw
     }
     
     static {
-        II = !tw.class.desiredAssertionStatus();
+        II = !ReflectionUtils.class.desiredAssertionStatus();
         COMPILE = Pattern.compile(".", Pattern.LITERAL);
         version = COMPILE.matcher(Bukkit.getServer().getClass().getPackage().getName()).replaceAll(Matcher.quoteReplacement(",")).split(",")[3] + ".";
     }

@@ -62,7 +62,7 @@ public class AimE extends KizukiCheck
                                 break;
                             }
                             ++n;
-                            final uv ii2 = tw.II(this.lastEntity);
+                            final uv ii2 = ReflectionUtils.II(this.lastEntity);
                             if (ii2 == null) {
                                 return;
                             }
